@@ -6,10 +6,18 @@ class HelloWorld extends Component {
         super(props);
         this.state = { greeting: 'Hello' };
         this.frenchify= this.frenchify.bind(this);
+        this.Mexicanize= this.Mexicanize.bind(this);
+        this.Indianize= this.Indianize.bind(this);
         this.removeGreeting = this.removeGreeting.bind(this);
     }
     frenchify() {
         this.setState({ greeting: 'Bonjour' });
+    }
+    Mexicanize() {
+        this.setState({ greeting: 'Ola' });
+    }
+    Indianize() {
+        this.setState({ greeting: 'Namasthe' });
     }
     removeGreeting() {
         this.props.removeGreeting(this.props.name);
@@ -20,6 +28,8 @@ class HelloWorld extends Component {
                 {this.state.greeting} {this.props.name}!
                 <br/>
                 <button onClick={this.frenchify}>Frenchify!</button>
+                <button onClick={this.Mexicanize}>Mexicanize!</button>
+                <button onClick={this.Indianize}>Indianize!</button>
                 <br/>
                 <button onClick={this.removeGreeting}>Remove Me!</button>
             </div>
